@@ -1,11 +1,17 @@
 // If you want to override variables do it here
 @import "variables";
 
+// Util style
+@import "utils";
+
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
 
 // If you want to add something do it here
 @import "custom";
+
+// Components Style
+@import "profile";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
