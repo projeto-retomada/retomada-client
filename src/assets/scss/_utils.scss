@@ -1,0 +1,403 @@
+.u-margin-center {
+    position: relative;
+    margin: 0 auto;
+}
+
+.u-margin-top-bottom-10 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.u-padding-horizontal-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.u-padding-vertical-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.u-margin-top-1 {
+    margin-top: $spacing-1;
+}
+
+.u-margin-top-2 {
+    margin-top: $spacing-2;
+}
+
+.u-margin-top-3 {
+    margin-top: $spacing-3;
+}
+
+.u-margin-top-4 {
+    margin-top: $spacing-4;
+}
+
+.u-margin-top-5 {
+    margin-top: $spacing-5;
+}
+
+
+.u-margin-bottom-1 {
+    margin-bottom: $spacing-1;
+}
+
+.u-margin-bottom-2 {
+    margin-bottom: $spacing-2;
+}
+
+.u-margin-bottom-3 {
+    margin-bottom: $spacing-3;
+}
+
+.u-margin-bottom-4 {
+    margin-bottom: $spacing-4;
+}
+
+.u-margin-bottom-5 {
+    margin-bottom: $spacing-5;
+}
+
+.u-link {
+    color: $color-blue-45 !important;
+    cursor: pointer;
+}
+
+.u-align-center {
+    text-align: center;
+
+    main {
+        text-align: left;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+.u-txt-primary {
+    color: $color-gray-20 !important;
+}
+
+.u-txt-secondary {
+    color: $color-gray-60 !important;
+}
+
+.u-txt-success {
+    color: $color-green-35 !important;
+}
+
+.u-txt-error {
+    color: #d33f2b !important;
+}
+
+.u-txt-warning {
+    color: $color-yellow-35 !important;
+}
+
+.u-txt-info {
+    color: $color-blue-35 !important;
+}
+
+.u-color-white {
+    color: $color-white !important;
+}
+
+.u-nowrap {
+    display: inline-block;
+}
+
+.u-line-height-default {
+    line-height: 1.428;
+}
+
+.u-text-bg-noise {
+    color: $color-gray-40;
+}
+
+.u-border-gray {
+    border: solid 1px $color-gray-90;
+}
+
+.u-border-top-gray {
+    border-top: solid 1px $color-gray-90;
+}
+
+.u-border-none {
+    border: none !important;
+}
+
+.u-box-shadow {
+    box-shadow: 5px 5px 15px $color-gray-94;
+}
+
+.p-color-black {
+    color: $color-white;
+}
+
+.p-color-white {
+    color: $color-black;
+}
+
+.p-color-gray-10 {
+    color: $color-gray-10;
+}
+
+.p-color-gray-20 {
+    color: $color-gray-20;
+}
+
+.p-color-gray-30 {
+    color: $color-gray-30;
+}
+
+.p-color-gray-40 {
+    color: $color-gray-40;
+}
+
+.p-color-gray-50 {
+    color: $color-gray-50;
+}
+
+.p-color-gray-60 {
+    color: $color-gray-60;
+}
+
+.p-color-gray-70 {
+    color: $color-gray-70;
+}
+
+.p-color-gray-80 {
+    color: $color-gray-80;
+}
+
+.p-color-gray-90 {
+    color: $color-gray-90;
+}
+
+.p-color-gray-92 {
+    color: $color-gray-92;
+}
+
+.p-color-gray-94 {
+    color: $color-gray-94;
+}
+
+.p-color-gray-96 {
+    color: $color-gray-96;
+}
+
+.p-color-blue-15 {
+    color: $color-blue-15;
+}
+
+.p-color-blue-25 {
+    color: $color-blue-25;
+}
+
+.p-color-blue-35 {
+    color: $color-blue-35;
+}
+
+.p-color-blue-45 {
+    color: $color-blue-45;
+}
+
+.p-color-blue-55 {
+    color: $color-blue-55;
+}
+
+.p-color-blue-65 {
+    color: $color-blue-65;
+}
+
+.p-color-blue-75 {
+    color: $color-blue-75;
+}
+
+.p-color-blue-85 {
+    color: $color-blue-85;
+}
+
+.p-color-blue-95 {
+    color: $color-blue-95;
+}
+
+.p-color-yellow-15 {
+    color: $color-yellow-15;
+}
+
+.p-color-yellow-25 {
+    color: $color-yellow-25;
+}
+
+.p-color-yellow-35 {
+    color: $color-yellow-35;
+}
+
+.p-color-yellow-45 {
+    color: $color-yellow-45;
+}
+
+.p-color-yellow-55 {
+    color: $color-yellow-55;
+}
+
+.p-color-yellow-65 {
+    color: $color-yellow-65;
+}
+
+.p-color-yellow-75 {
+    color: $color-yellow-75;
+}
+
+.p-color-yellow-85 {
+    color: $color-yellow-85;
+}
+
+.p-color-yellow-95 {
+    color: $color-yellow-95;
+}
+
+.p-color-brown-15 {
+    color: $color-brown-15;
+}
+
+.p-color-brown-25 {
+    color: $color-brown-25;
+}
+
+.p-color-brown-35 {
+    color: $color-brown-35;
+}
+
+.p-color-brown-45 {
+    color: $color-brown-45;
+}
+
+.p-color-brown-55 {
+    color: $color-brown-55;
+}
+
+.p-color-brown-65 {
+    color: $color-brown-65;
+}
+
+.p-color-brown-75 {
+    color: $color-brown-75;
+}
+
+.p-color-brown-85 {
+    color: $color-brown-85;
+}
+
+.p-color-brown-95 {
+    color: $color-brown-95;
+}
+
+.p-color-green-15 {
+    color: $color-green-15;
+}
+
+.p-color-green-25 {
+    color: $color-green-25;
+}
+
+.p-color-green-35 {
+    color: $color-green-35;
+}
+
+.p-color-green-45 {
+    color: $color-green-45;
+}
+
+.p-color-green-55 {
+    color: $color-green-55;
+}
+
+.p-color-green-65 {
+    color: $color-green-65;
+}
+
+.p-color-green-75 {
+    color: $color-green-75;
+}
+
+.p-color-green-85 {
+    color: $color-green-85;
+}
+
+.p-color-green-95 {
+    color: $color-green-95;
+}
+
+.p-color-red-15 {
+    color: $color-red-15;
+}
+
+.p-color-red-25 {
+    color: $color-red-25;
+}
+
+.p-color-red-35 {
+    color: $color-red-35;
+}
+
+.p-color-red-45 {
+    color: $color-red-45;
+}
+
+.p-color-red-55 {
+    color: $color-red-55;
+}
+
+.p-color-red-65 {
+    color: $color-red-65;
+}
+
+.p-color-red-75 {
+    color: $color-red-75;
+}
+
+.p-color-red-85 {
+    color: $color-red-85;
+}
+
+.p-color-red-95 {
+    color: $color-red-95;
+}
+
+.p-color-purple-10 {
+    color: $color-purple-10;
+}
+
+.p-color-purple-20 {
+    color: $color-purple-20;
+}
+
+.p-color-purple-30 {
+    color: $color-purple-30;
+}
+
+.p-color-purple-40 {
+    color: $color-purple-40;
+}
+
+.p-color-purple-50 {
+    color: $color-purple-50;
+}
+
+.p-color-purple-60 {
+    color: $color-purple-60;
+}
+
+.p-color-purple-70 {
+    color: $color-purple-70;
+}
+
+.p-color-purple-80 {
+    color: $color-purple-80;
+}
+
+.p-color-purple-90 {
+    color: $color-purple-90;
+}

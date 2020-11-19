@@ -12,8 +12,8 @@
         id="defaultFormLoginEmailEx"
         class="form-control"
       />
-      <br />
-      <label for="defaultFormLoginPasswordEx" class="grey-text">Senha</label>
+      
+      <label for="defaultFormLoginPasswordEx" class="grey-text u-margin-top-2">Senha</label>
       <input
         placeholder="Digite sua senha"
         type="password"

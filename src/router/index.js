@@ -30,6 +30,7 @@ const Paginations = () => import('@/views/base/Paginations')
 const Popovers = () => import('@/views/base/Popovers')
 const ProgressBars = () => import('@/views/base/ProgressBars')
 const Tooltips = () => import('@/views/base/Tooltips')
+const Profile = () => import('@/views/base/Profile')
 
 // Views - Buttons
 const StandardButtons = () => import('@/views/buttons/StandardButtons')
@@ -134,6 +135,12 @@ function configRoutes () {
               component: User
             }
           ]
+        },
+        {
+          path: '/profile/:username',
+          name: 'Profile',
+          component: Profile,
+          props: true, 
         },
         {
           path: 'base',
