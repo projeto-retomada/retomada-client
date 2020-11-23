@@ -2,34 +2,47 @@
   <div>
       <CCard class="profile-main-card">
         <CCardHeader class="profile-main-card__header">
+            <CDropdown
+                color="link"
+                size="lg"
+                :caret="false"
+                class="u-text-right u-color-white">
+                <template #toggler-content>
+                    <menu-icon />
+                </template>
+                <CDropdownItem>Editar Perfil</CDropdownItem>
+                <CDropdownItem>Excluir Perfil</CDropdownItem>
+            </CDropdown>
             <img src="img/avatars/user_default.png" alt="" class="profile-pic">
             <h5 class="profile-name">{{ user.name }}</h5>
+            <span class="tooltip-role" v-bind:class="{'student': user.role == 'STUDENT','teacher': user.role == 'TEACHER', 'admin': user.role == 'ADMIN'}">
+                {{ user.role }}
+            </span>
         </CCardHeader>
         <CCardBody class="profile-main-card__body">
-            <CRow>
-                <CCol md="6" sm="12">
-                    <CCard class="u-border-none u-box-shadow">
-                        <CCardHeader class="u-border-none">
-                            <p class="title"> <CIcon name="cil-file"/> Questionários de Saúde</p>
-                        </CCardHeader>
-                        <CCardBody>
-                            <p class="p-color-gray-30">Semana Atual</p>
-                        </CCardBody>
-                    </CCard>
-                </CCol>
-                <CCol md="6" sm="12">
-                    <CCard>
-                        Ver o que por aqui
-                    </CCard>
-                </CCol>
-            </CRow>
+            <CTabs :active-tab="1">
+                <CTab title="Dados Pessoais">
+                    
+                </CTab>
+                <CTab title="Resumo">
+                    <CRow>
+                        <CCol md="6" sm="12">
+                            <list-my-activities :username="username"></list-my-activities>
+                        </CCol>
+                    </CRow>
+                </CTab>
+            </CTabs>
         </CCardBody>
       </CCard>
   </div>
 </template>
 
 <script>
+    import ListMyActivities from '../components/ListMyActivities.vue'
     export default {
+        components: {
+            'list-my-activities': ListMyActivities
+        },
         name: 'Profile',
         props: {
             username: { 

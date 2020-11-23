@@ -12,11 +12,28 @@
 
 // Components Style
 @import "profile";
+@import "list-my-activities";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
   font-family: 'Montserrat', sans-serif;
+}
+
+.tooltip-role {
+  font-size: 12px;
+  padding: $spacing-1;
+  color: $color-white;
+  border-radius: 15px;
+  &.student {
+    background-color: $color-green-35;
+  }
+  &.teacher {
+    background-color: #007AFF;
+  }
+  &.admin {
+    background-color: #9013FE;
+  }
 }
 
 .card-header:not(.content-center) > .c-icon:first-child {
@@ -69,4 +86,19 @@
       color: $color-white;
     }
   } 
+}
+.nav-fill {
+  .nav-item, .nav-link {
+    color: $color-white;
+    font-weight: 500;
+    &:hover {
+      border: none;
+    }
+  }
+  .nav-link.active {
+    color: $color-white;
+    border: none;
+    border-bottom: 5px solid $color-green-55;
+    background: transparent;
+  }
 }

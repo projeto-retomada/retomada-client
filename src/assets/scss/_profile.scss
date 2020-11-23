@@ -5,7 +5,8 @@
       background-attachment: fixed;
       background-size: cover;
       text-align: center;
-      padding: $spacing-2;
+      padding-top: $spacing-3;
+      padding-bottom: $spacing-3;
       .profile-pic {
           width: 90px;
           height: 90px;
@@ -16,12 +17,43 @@
           margin-top: $spacing-1;
           font-weight: 500;
       }
+      .dropdown {
+          button {
+              border: none;
+              color: $color-white;
+              background-color: rgba(#1E909B, .5);
+              &:hover, &:active, &:focus {
+                  background-color: #1E909B;
+                  box-shadow: none;
+              }
+          }
+      }
     }
     &__body {
         padding: $spacing-5;
         .title {
             font-weight: 600;
             color: $color-green-35;
+        }
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            border: none;
+            margin-bottom: $spacing-3;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: $color-gray-30;
+            &.active {
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid $color-green-35;
+                color: $color-green-35;
+            }
+            &:hover {
+                border: none;
+                color: $color-green-35;
+            }
         }
     }
 }
