@@ -55,5 +55,13 @@
                 color: $color-green-35;
             }
         }
+        .resume-cards {
+            @media (max-width: 768px) {
+                display: block;
+            }
+            &__card {
+                display: block;
+            }
+        }
     }
 }

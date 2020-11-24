@@ -1,0 +1,10 @@
+.list-activities-card {
+    width: 350px !important;
+    &__header {
+        padding: $spacing-2 $spacing-3;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

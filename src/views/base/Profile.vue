@@ -8,7 +8,7 @@
                 :caret="false"
                 class="u-text-right u-color-white">
                 <template #toggler-content>
-                    <menu-icon />
+                    <font-awesome-icon icon="ellipsis-h" />
                 </template>
                 <CDropdownItem>Editar Perfil</CDropdownItem>
                 <CDropdownItem>Excluir Perfil</CDropdownItem>
@@ -20,28 +20,29 @@
             </span>
         </CCardHeader>
         <CCardBody class="profile-main-card__body">
-            <CTabs :active-tab="1">
-                <CTab title="Dados Pessoais">
-                    
-                </CTab>
-                <CTab title="Resumo">
-                    <CRow>
-                        <CCol md="6" sm="12">
-                            <list-my-activities :username="username"></list-my-activities>
-                        </CCol>
-                    </CRow>
-                </CTab>
-            </CTabs>
+            <div class="u-display-flex u-justify-content-center resume-cards">
+                <div class="u-width-100 u-display-flex u-justify-content-center u-direction-row u-flex-wrap">
+                    <list-my-activities :username="username" class="resume-cards__card"></list-my-activities>
+                </div>
+                <div class="u-width-100 u-display-flex u-justify-content-center u-direction-row u-flex-wrap">
+                    <list-my-health-questionnare :username="username" class="resume-cards__card"></list-my-health-questionnare>
+                    <list-my-last-places :username="username" class="resume-cards__card"></list-my-last-places>
+                </div>
+            </div>
         </CCardBody>
       </CCard>
   </div>
 </template>
 
 <script>
-    import ListMyActivities from '../components/ListMyActivities.vue'
+    import ListMyActivities from '../components/ListMyActivities.vue';
+    import ListMyLastPlaces from '../components/ListMyLastPlaces.vue';
+    import ListMyHeathQuestionnare from '../components/ListMyHeathQuestionnare.vue';
     export default {
         components: {
-            'list-my-activities': ListMyActivities
+            'list-my-activities': ListMyActivities,
+            'list-my-last-places': ListMyLastPlaces,
+            'list-my-health-questionnare': ListMyHeathQuestionnare
         },
         name: 'Profile',
         props: {
