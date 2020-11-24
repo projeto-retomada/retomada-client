@@ -1,66 +1,39 @@
 <template>
-  <div class="c-app flex-row align-items-center">
-    <CContainer>
-      <CRow class="justify-content-center">
-        <CCol md="8">
-          <CCardGroup>
-            <CCard class="p-4">
-              <CCardBody>
-                <CForm>
-                  <h1>Login</h1>
-                  <p class="text-muted">Sign In to your account</p>
-                  <CInput
-                    placeholder="Username"
-                    autocomplete="username email"
-                  >
-                    <template #prepend-content><CIcon name="cil-user"/></template>
-                  </CInput>
-                  <CInput
-                    placeholder="Password"
-                    type="password"
-                    autocomplete="curent-password"
-                  >
-                    <template #prepend-content><CIcon name="cil-lock-locked"/></template>
-                  </CInput>
-                  <CRow>
-                    <CCol col="6" class="text-left">
-                      <CButton color="primary" class="px-4">Login</CButton>
-                    </CCol>
-                    <CCol col="6" class="text-right">
-                      <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <CButton color="link" class="d-lg-none">Register now!</CButton>
-                    </CCol>
-                  </CRow>
-                </CForm>
-              </CCardBody>
-            </CCard>
-            <CCard
-              color="primary"
-              text-color="white"
-              class="text-center py-5 d-md-down-none"
-              body-wrapper
-            >
-              <CCardBody>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <CButton
-                  color="light"
-                  variant="outline"
-                  size="lg"
-                >
-                  Register Now!
-                </CButton>
-              </CCardBody>
-            </CCard>
-          </CCardGroup>
-        </CCol>
-      </CRow>
-    </CContainer>
+  <div id="Loginfull" class="c-app flex-row align-items-center">
+    <!-- Formulário de login -->
+    <form id="Flogin">
+     <center> <img src="img/logo_r.png" size="custom-size" height="50px" 
+     class="c-sidebar-brand-full"></center>
+      <p class="h4 text-center mb-4">Bem-Vindo</p>
+      <label for="defaultFormLoginEmailEx" class="grey-text">Usuário</label>
+      <input
+        placeholder="Digite seu nome de usuário ou email"
+        type="email"
+        id="defaultFormLoginEmailEx"
+        class="form-control"
+      />
+      
+      <label for="defaultFormLoginPasswordEx" class="grey-text u-margin-top-2">Senha</label>
+      <input
+        placeholder="Digite sua senha"
+        type="password"
+        id="defaultFormLoginPasswordEx"
+        class="form-control"
+      />
+      <div id="Lbtn" class="text-center mt-4">
+        <button class="btn btn-indigo" type="submit">Entrar</button>
+      </div>
+      <hr />
+      <a class="font-small blue-text d-flex justify-content-end pb-2" href="#"
+        >Esqueci minha senha</a
+      >
+    </form>
+    <!-- Formulário de login -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Login'
-}
+  name: "Login",
+};
 </script>
