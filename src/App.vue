@@ -1,5 +1,8 @@
 <template>
-  <router-view></router-view>
+  <div>
+    <FloatingAlert language="pt-BR" />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>

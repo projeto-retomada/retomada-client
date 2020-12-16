@@ -30,7 +30,7 @@ const Paginations = () => import('@/views/base/Paginations')
 const Popovers = () => import('@/views/base/Popovers')
 const ProgressBars = () => import('@/views/base/ProgressBars')
 const Tooltips = () => import('@/views/base/Tooltips')
-const Profile = () => import('@/views/base/Profile')
+const Profile = () => import('../views/base/profile/Profile.vue')
 
 // Views - Buttons
 const StandardButtons = () => import('@/views/buttons/StandardButtons')
@@ -51,7 +51,7 @@ const Modals = () => import('@/views/notifications/Modals')
 // Views - Pages
 const Page404 = () => import('@/views/pages/Page404')
 const Page500 = () => import('@/views/pages/Page500')
-const Login = () => import('@/views/pages/Login')
+const Login = () => import('../views/pages/login/Login.vue')
 const Register = () => import('@/views/pages/Register')
 
 // Users

@@ -8,7 +8,7 @@
             <div v-if="!isEmpty">
                 <span class="u-margin-bottom-2" v-for="place in places" :key="place.id">
                     <p class="p-color-blue-35 u-margin-bottom-0">
-                        <font-awesome-icon icon="map-marker" class="u-font-size-20 u-margin-right-1"/>
+                        <i class="fas fa-map-marker-alt u-font-size-20 u-margin-right-1"></i>
                         {{ place.name }}
                     </p>
                     <p class="u-margin-left-3 u-font-size-10"> 
@@ -16,7 +16,7 @@
                 </span>
             </div>
             <div v-if="isEmpty" class="p-color-gray-40">
-                <font-awesome-icon icon="info-circle" /> Você não visitou nenhum local nos últimos 7 dias
+                <i class="fas fa-info-circle"></i> Você não visitou nenhum local nos últimos 7 dias
             </div>
         </CCardBody>
     </CCard>      
@@ -32,29 +32,11 @@
             },
         },
         created() { 
-            // hardcoded apenas para construir o componente
-            this.places = [
-                {
-                    id: 1,
-                    name: 'Sala 2',
-                    when: 1606093126577
-                },
-                {
-                    id: 1,
-                    name: 'Sala 1',
-                    when: 1606186800000
-                },
-                {
-                    id: 1,
-                    name: 'Sala 5',
-                    when: 1606093126577
-                },
-                {
-                    id: 1,
-                    name: 'Sala 7',
-                    when: 1606186800000
-                }
-            ];
+            this.places = [];
+
+            this.axios.get('/users/'+ this.username +'/last-places').then(function (result){
+                this.places = result.data
+            });
         
             this.isEmpty = !(this.places.length > 0);
         },
