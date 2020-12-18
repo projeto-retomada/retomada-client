@@ -19,29 +19,29 @@ Vue.prototype.$log = console.log.bind(console)
 
 Vue.axios.defaults.baseURL = 'http://localhost:3333/';
 Vue.axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-Vue.axios.interceptors.response.use(function (response) {
-  return response
-}, function (error) {
-  if (error.response && error.response.status === 401 ) {
-    Vue.$floatingAlert.warn({
-        title: "Ops!",
-        message: "Você não obteve autorização para fazer essa ação",
-    })
-  } else {
-    Vue.$floatingAlert.error({
-        title: "Ops!",
-        message: "Algo de errado, tente novamente",
-    })
-  }
+Vue.axios.interceptors.response.use(function(response) {
+    return response
+}, function(error) {
+    if (error.response && error.response.status === 401) {
+        Vue.$floatingAlert.warn({
+            title: "Ops!",
+            message: "Você não obteve autorização para fazer essa ação",
+        })
+    } else {
+        Vue.$floatingAlert.error({
+            title: "Ops!",
+            message: "Algo de errado, tente novamente",
+        })
+    }
 });
 
 new Vue({
-  el: '#app',
-  router,
-  store,
-  icons,
-  template: '<App/>',
-  components: {
-    App
-  }
+    el: '#app',
+    router,
+    store,
+    icons,
+    template: '<App/>',
+    components: {
+        App
+    }
 })
