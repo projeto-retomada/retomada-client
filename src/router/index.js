@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store.js'
 
 // Containers
 const TheContainer = () => import('@/containers/TheContainer')
@@ -60,12 +61,25 @@ const User = () => import('@/views/users/User')
 
 Vue.use(Router)
 
-export default new Router({
+function routeBasicGuard(to, from, next) {
+  if(store.state.authenticated == false) {
+    next('/login');
+  } else {
+    next();
+  }
+}
+const router = new Router({
   mode: 'hash', // https://router.vuejs.org/api/#mode
   linkActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
   routes: configRoutes()
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Login' && !store.state.authenticated) next({ name: 'Login' })
+  else next()
+})
+export default router;
 
 function configRoutes () {
   return [
@@ -315,6 +329,11 @@ function configRoutes () {
       ]
     },
     {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+    },
+    {
       path: '/pages',
       redirect: '/pages/404',
       name: 'Pages',
@@ -331,11 +350,6 @@ function configRoutes () {
           path: '500',
           name: 'Page500',
           component: Page500
-        },
-        {
-          path: 'login',
-          name: 'Login',
-          component: Login
         },
         {
           path: 'register',

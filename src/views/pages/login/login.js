@@ -28,12 +28,18 @@ export default {
             }
           })
           .then((res) => {
-            this.$cookie.set('token', res.data.token, { expires: '8h' });
             this.axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
             if (!res.data.user.picture) {
               res.data.user.picture = 'img/avatars/user_default.png';
             }
+            var expires = new Date();
+            var token = {
+              token: res.data.token,
+              expires: expires.setHours(expires.getHours() + 8)
+            }
+            localStorage.setItem('token', JSON.stringify(token))
             localStorage.setItem('user', JSON.stringify(res.data.user))
+            this.$store.commit("setAuthentication", true);
             this.$router.replace({ name: "Profile", params: {username: res.data.user.username}})
           })
           .catch((error) => {
