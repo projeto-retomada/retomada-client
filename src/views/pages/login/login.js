@@ -43,6 +43,7 @@ export default {
             this.$router.replace({ name: "Profile", params: {username: res.data.user.username}})
           })
           .catch((error) => {
+            console.log(error);
             if (error.response && error.response.status === 401 ) {
               this.$floatingAlert.warn({
                   title: "Ops!",

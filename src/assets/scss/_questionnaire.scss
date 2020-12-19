@@ -1,0 +1,29 @@
+.questionnaire-tabs {
+    .nav {
+        &-tabs {
+            border-color: $color-gray-94;
+            margin-bottom: $spacing-5;
+        }
+        &-item {
+            margin-right: $spacing-2;
+        }
+        &-link {
+            color: $color-green-45;
+            font-weight: 600;
+            padding-bottom: $spacing-3;
+        }
+        &-link.active {
+            color: #333;
+            background: none;
+            border-radius: 0;
+            border: 0px;
+            border-bottom: 3px solid $color-green-45;
+        }
+        &-title {
+            margin-right: $spacing-8;
+            a, .nav-link.disabled {
+                color: #333;
+            }
+        }
+    }
+}

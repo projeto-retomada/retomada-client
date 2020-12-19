@@ -304,6 +304,10 @@
     line-height: 1.428;
 }
 
+.u-line-height-8 {
+    line-height: 8px;
+}
+
 .u-text-bg-noise {
     color: $color-gray-40;
 }
@@ -337,7 +341,7 @@
 }
 
 .p-color-gray-10 {
-    color: $color-gray-10;
+    color: $color-gray-10 !important;
 }
 
 .p-color-gray-20 {

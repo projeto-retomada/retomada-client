@@ -8,6 +8,11 @@ export default [
         to: '/profile/' + JSON.parse(localStorage.getItem('user')).username,
       },
       {
+        _name: 'CSidebarNavItem',
+        name: 'Questionários de Saúde',
+        to: '/questionnaire',
+      },
+      {
         _name: 'CSidebarNavDropdown',
         name: 'Base',
         route: '/base',
