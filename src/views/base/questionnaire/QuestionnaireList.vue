@@ -12,7 +12,7 @@
                         </div>
                         <div class="u-margin-top-3">
                             <p class="u-semibold p-color-gray-10">Questionários anterioes</p>
-                            <span class="u-display-flex">
+                            <span class="u-display-flex u-flex-wrap">
                                 <questionnaire-card></questionnaire-card>
                                 <questionnaire-card></questionnaire-card>
                                 <questionnaire-card></questionnaire-card>

@@ -15,7 +15,6 @@ Vue.use(VueFloatingAlert)
 Vue.use(CoreuiVue)
 Vue.use(VueAxios, axios)
 Vue.use(VueCookie);
-Vue.prototype.$log = console.log.bind(console)
 
 Vue.axios.defaults.baseURL = 'http://localhost:3333/';
 Vue.axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

@@ -19,8 +19,11 @@ const Login = () =>
 const Users = () =>
   import('../views/base/users/Users.vue')
 
+// QUESTIONNAIRE COMPONENTS
 const QuestionnaireList = () =>
   import('../views/base/questionnaire/QuestionnaireList.vue')
+const QuestionnaireForm = () =>
+  import('../views/base/questionnaire/QuestionnaireForm.vue')
 
 Vue.use(Router)
 
@@ -72,6 +75,11 @@ function configRoutes() {
       name: 'Questionnaire',
       component: QuestionnaireList
     },
+    {
+      path: '/questionnaire/answer',
+      name: 'QuestionnaireForm',
+      component: QuestionnaireForm
+    }
     ]
   },
   {

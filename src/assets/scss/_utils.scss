@@ -14,6 +14,10 @@
     display: flex;
 }
 
+.u-justify-content-between {
+    justify-content: space-between;
+}
+
 .u-justify-content-center {
     justify-content: center;
 }
@@ -160,6 +164,18 @@
 
 .u-margin-bottom-5 {
     margin-bottom: $spacing-5;
+}
+
+.u-padding-1 {
+    padding: $spacing-1;
+}
+
+.u-padding-2 {
+    padding: $spacing-2;
+}
+
+.u-padding-3 {
+    padding: $spacing-3;
 }
 
 .u-padding-top-1 {
