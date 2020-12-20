@@ -8,7 +8,7 @@
                     <CTab title="Meus" active>
                         <div>
                             <p class="u-semibold p-color-gray-10">Questionário da semana atual</p>
-                            <questionnaire-card></questionnaire-card>
+                            <questionnaire-card class="actual-questionnaire"></questionnaire-card>
                         </div>
                         <div class="u-margin-top-3">
                             <p class="u-semibold p-color-gray-10">Questionários anterioes</p>

@@ -17,5 +17,5 @@ export function getWeekSpace(d) {
 }
 
 export function withoutTime(d) {
-    return d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
+    return d.getDate() + '/' + d.getMonth();
 }

@@ -33,6 +33,22 @@ Vue.axios.interceptors.response.use(function(response) {
         })
     }
 });
+Vue.axios.interceptors.request.use(
+    (config) => {
+      let token = localStorage.getItem('token');
+      token = token ? JSON.parse(token).token : '';
+  
+      if (token) {
+        config.headers['Authorization'] = `Bearer ${ token }`;
+      }
+  
+      return config;
+    }, 
+  
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
 
 new Vue({
     el: '#app',
