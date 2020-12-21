@@ -1,4 +1,4 @@
-export default [
+var nav = [
   {
     _name: 'CSidebarNav',
     _children: [
@@ -87,3 +87,11 @@ export default [
     ]
   }
 ]
+if (JSON.parse(localStorage.getItem('user')).role == 'ADMIN') {
+  nav[0]._children.push({
+    _name: 'CSidebarNavItem',
+    name: 'Usuários',
+    to: '/users',
+  },);
+}
+export default nav
