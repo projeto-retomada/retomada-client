@@ -3,15 +3,19 @@ import * as utils from '../../../utils/utils'
 export default {
     name: 'QuestionnaireForm',
     props: {
+        idQuestionnaire: {
+            required: false
+        }
     },
     created() {
-        
-    },
-    data() {
-        return {
-            week: utils.getWeekSpace(new Date()),
-            withoutTime: utils.withoutTime,
-            answer: {
+        var vm = this;
+        if (this.idQuestionnaire) {
+            this.axios.get('/questionnaire/' + this.idQuestionnaire, {}).then(function (res) {
+                var questionnaire = res.data;
+                vm.answer = JSON.parse(questionnaire.answer);
+            })
+        } else {
+            this.answer = {
                 fever: 'yes',
                 testedPositive: 'yes',
                 exposedVirus: 'yes',
@@ -20,6 +24,14 @@ export default {
                 shortnessBreathe: 'yes',
                 tiredness: 'yes'
             }
+        }
+    },
+    data() {
+        return {
+            week: utils.getWeekSpace(new Date()),
+            withoutTime: utils.withoutTime,
+            answer: {},
+            alreadyAnswered: false
         };
     },
     methods: {
@@ -34,6 +46,7 @@ export default {
                     title: "Sucesso!",
                     message: "As respostas do seu questionário semanal foram armazenadas corretamente!",
                 })
+                vm.alreadyAnswered = true;
             });
         },
     }
