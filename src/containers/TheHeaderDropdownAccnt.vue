@@ -15,7 +15,7 @@
         </div>
       </CHeaderNavLink>
     </template>
-    <CDropdownItem>
+    <CDropdownItem @click="logout()">
       <i class="fas fa-sign-out-alt u-margin-right-1"></i> Sair
     </CDropdownItem>
   </CDropdown>
@@ -27,6 +27,14 @@ export default {
   data () {
     return { 
       user: JSON.parse(localStorage.getItem('user'))
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.reload();
+      this.$router.replace({ name: "Login"})
     }
   }
 }
