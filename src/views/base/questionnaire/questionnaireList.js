@@ -13,8 +13,10 @@ export default {
         var user = JSON.parse(localStorage.getItem('user')); 
         var vm = this; 
         this.axios.get('/questionnaire/', {
-            filters: {
-                user_id: parseInt(user.id_user)
+            params: {
+                filters: JSON.stringify({
+                    user_id: parseInt(user.id_user)
+                })
             }
         }).then(function (res) {
             vm.myQuestionnaires = res.data;

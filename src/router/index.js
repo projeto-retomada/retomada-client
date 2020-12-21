@@ -89,7 +89,7 @@ function configRoutes() {
     ]
   },
   {
-    path: 'login',
+    path: '/login',
     name: 'Login',
     component: Login
   },

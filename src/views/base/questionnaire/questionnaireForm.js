@@ -10,8 +10,14 @@ export default {
     created() {
         var vm = this;
         if (this.idQuestionnaire) {
-            this.axios.get('/questionnaire/' + this.idQuestionnaire, {}).then(function (res) {
-                var questionnaire = res.data;
+            this.axios.get('/questionnaire/', {
+                params: {
+                    filters: JSON.stringify({
+                        id: parseInt(this.idQuestionnaire)
+                    })
+                }
+            }).then(function (res) {
+                var questionnaire = res.data[0];
                 vm.answer = JSON.parse(questionnaire.answer);
             })
         } else {
