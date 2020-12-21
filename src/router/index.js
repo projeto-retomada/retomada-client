@@ -79,6 +79,12 @@ function configRoutes() {
       path: '/questionnaire/answer',
       name: 'QuestionnaireForm',
       component: QuestionnaireForm
+    },
+    {
+      path: '/questionnaire/show/:idQuestionnaire',
+      name: 'QuestionnaireFormRead',
+      component: QuestionnaireForm,
+      props: true,
     }
     ]
   },

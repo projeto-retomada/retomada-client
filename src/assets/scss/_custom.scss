@@ -118,7 +118,7 @@ textarea {
     color: #fff;
     background-color: $color-green-45;
     border-color: $color-green-45;
-    &:hover {
+    &:hover, &:active {
         background-color: $color-green-35;
         border-color: $color-green-35;
     }

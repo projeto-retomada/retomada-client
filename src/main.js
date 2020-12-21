@@ -22,17 +22,33 @@ Vue.axios.interceptors.response.use(function(response) {
     return response
 }, function(error) {
     if (error.response && error.response.status === 401) {
-        Vue.$floatingAlert.warn({
+        VueFloatingAlert.warn({
             title: "Ops!",
             message: "Você não obteve autorização para fazer essa ação",
         })
     } else {
-        Vue.$floatingAlert.error({
+        VueFloatingAlert.error({
             title: "Ops!",
             message: "Algo de errado, tente novamente",
         })
     }
 });
+Vue.axios.interceptors.request.use(
+    (config) => {
+      let token = localStorage.getItem('token');
+      token = token ? JSON.parse(token) : '';
+  
+      if (config.url !== "/login" && token && token.expires > new Date()) {
+        config.headers['Authorization'] = `Bearer ${ token.token }`;
+      }
+  
+      return config;
+    }, 
+  
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
 
 new Vue({
     el: '#app',

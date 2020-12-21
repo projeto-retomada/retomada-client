@@ -28,6 +28,7 @@ export default {
             }
           })
           .then((res) => {
+            this.axios.defaults.headers.common['Auth-Token'] = 'Bearer ' + res.data.token;
             this.axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
             if (!res.data.user.picture) {
               res.data.user.picture = 'img/avatars/user_default.png';
