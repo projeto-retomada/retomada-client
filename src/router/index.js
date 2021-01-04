@@ -19,6 +19,9 @@ const Login = () =>
 const Users = () =>
   import('../views/base/users/Users.vue')
 
+const PlacesList = () =>
+  import('../views/base/places/PlacesList.vue')
+
 // QUESTIONNAIRE COMPONENTS
 const QuestionnaireList = () =>
   import('../views/base/questionnaire/QuestionnaireList.vue')
@@ -85,7 +88,12 @@ function configRoutes() {
       name: 'QuestionnaireFormRead',
       component: QuestionnaireForm,
       props: true,
-    }
+    },
+    {
+      path: '/places/',
+      name: 'Places',
+      component: PlacesList
+    },
     ]
   },
   {

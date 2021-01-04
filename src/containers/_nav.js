@@ -13,6 +13,11 @@ var nav = [
         to: '/questionnaire',
       },
       {
+        _name: 'CSidebarNavItem',
+        name: 'Locais',
+        to: '/places',
+      },
+      {
         _name: 'CSidebarNavDropdown',
         name: 'Base',
         route: '/base',
