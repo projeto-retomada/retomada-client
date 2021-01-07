@@ -3,14 +3,17 @@
         &-tabs {
             border-color: $color-gray-94;
         }
+
         &-item {
             margin-right: $spacing-2;
         }
+
         &-link {
             color: $color-green-45;
             font-weight: 600;
             padding-bottom: $spacing-3;
         }
+
         &-link.active {
             color: #333;
             background: none;
@@ -18,9 +21,12 @@
             border: 0px;
             border-bottom: 3px solid $color-green-45;
         }
+
         &-title {
             margin-right: $spacing-8;
-            a, .nav-link.disabled {
+
+            a,
+            .nav-link.disabled {
                 color: #333;
             }
         }
@@ -30,6 +36,7 @@
 .places-filter-div {
     padding: 20px 10px 20px 10px;
     border-bottom: 1px solid #f0f0f0;
+
     .btn_novo {
         background-color: #1e909b;
         color: white;
@@ -39,4 +46,24 @@
 
 .places_container {
     padding: 20px;
+}
+
+.places_text_info {
+    color: black;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.local_info {
+    background-color: #eeeeee
+}
+
+.places_info_title {
+    color: black;
+    font-weight: bold;
+}
+
+.customIcon {
+    color: #22a4a7;
+    width: 2.2rem !important;
 }

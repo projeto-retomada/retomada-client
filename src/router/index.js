@@ -22,6 +22,9 @@ const Users = () =>
 const PlacesList = () =>
   import('../views/base/places/PlacesList.vue')
 
+const PlacesView = () =>
+  import('../views/base/places/PlacesView.vue')
+
 // QUESTIONNAIRE COMPONENTS
 const QuestionnaireList = () =>
   import('../views/base/questionnaire/QuestionnaireList.vue')
@@ -93,6 +96,14 @@ function configRoutes() {
       path: '/places/',
       name: 'Places',
       component: PlacesList
+    },
+    {
+      path: '/places/view/:place',
+      name: 'PlacesView',
+      component: PlacesView,
+      props: (route) => ({
+        ...route.params
+      })
     },
     ]
   },
