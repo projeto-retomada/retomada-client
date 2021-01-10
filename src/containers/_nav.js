@@ -12,6 +12,11 @@ var nav = [
         name: 'Questionários de Saúde',
         to: '/questionnaire',
       },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Locais',
+        to: '/places',
+      }
     ]
   }
 ]

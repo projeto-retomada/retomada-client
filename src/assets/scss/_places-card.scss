@@ -1,0 +1,22 @@
+.places-card {
+    margin: $spacing-1;
+    color: $color-gray-10;
+    width: 300px;
+    border-left: 8px solid #007AFF;
+    box-shadow: none;
+    border-radius: 1.5px;
+    &:hover {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+.actual-places {
+    .places-card {
+        border-top: 8px solid #007AFF;
+    }    
+}
+
+.icon_pencil {
+    color: #1e909b;
+    float: right;
+}
