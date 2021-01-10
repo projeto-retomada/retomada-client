@@ -33,8 +33,8 @@ export default {
     logout() {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.reload();
       this.$router.replace({ name: "Login"})
+      window.location.reload();
     }
   }
 }

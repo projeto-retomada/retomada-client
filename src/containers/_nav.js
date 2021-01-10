@@ -12,7 +12,20 @@ var nav = [
         name: 'Questionários de Saúde',
         to: '/questionnaire',
       },
-      {
+    ]
+  }
+]
+if (JSON.parse(localStorage.getItem('user')).role == 'ADMIN') {
+  nav[0]._children.push({
+    _name: 'CSidebarNavItem',
+    name: 'Usuários',
+    to: '/users',
+  },);
+}
+export default nav
+
+/*
+{
         _name: 'CSidebarNavDropdown',
         name: 'Base',
         route: '/base',
@@ -84,14 +97,4 @@ var nav = [
           }
         ]
       },
-    ]
-  }
-]
-if (JSON.parse(localStorage.getItem('user')).role == 'ADMIN') {
-  nav[0]._children.push({
-    _name: 'CSidebarNavItem',
-    name: 'Usuários',
-    to: '/users',
-  },);
-}
-export default nav
+*/
