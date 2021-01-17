@@ -31,6 +31,10 @@ const QuestionnaireList = () =>
 const QuestionnaireForm = () =>
   import('../views/base/questionnaire/QuestionnaireForm.vue')
 
+// ACTIVITIES COMPONENTS
+const ActivitiesList = () =>
+  import('../views/base/activities/ActivitiesList.vue')
+
 Vue.use(Router)
 
 const router = new Router({
@@ -104,6 +108,11 @@ function configRoutes() {
       props: (route) => ({
         ...route.params
       })
+    },
+    {
+      path: '/activities/',
+      name: 'Activities',
+      component: ActivitiesList
     },
     ]
   },

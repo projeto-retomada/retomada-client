@@ -6,7 +6,7 @@
           <CTab title="Locais da instituição" active>
             <div v-if="myPlacesLoaded">
               <div class="places-filter-div">
-                <CButton class="btn_novo m-2" v-if="role == 'ADM'">
+                <CButton class="btn_novo m-2" v-if="role == 'ADMIN'">
                   Criar novo
                 </CButton>
               </div>

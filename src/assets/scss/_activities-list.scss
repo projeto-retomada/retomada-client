@@ -1,0 +1,17 @@
+.activities-filters-container {
+    padding: 20px 10px 20px 10px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .btn_novo {
+        background-color: #1e909b;
+        color: white;
+        width: 150px;
+    }
+}
+.activities-content-container {
+    padding: 20px;
+    &__title {
+        color: $color-gray-20;
+        font-weight: 800;
+    }
+}

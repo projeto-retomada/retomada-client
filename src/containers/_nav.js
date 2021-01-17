@@ -9,14 +9,19 @@ var nav = [
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Questionários de Saúde',
-        to: '/questionnaire',
+        name: 'Atividades',
+        to: '/activities',
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Locais',
         to: '/places',
-      }
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Questionários de Saúde',
+        to: '/questionnaire',
+      },
     ]
   }
 ]

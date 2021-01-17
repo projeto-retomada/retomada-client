@@ -1,0 +1,35 @@
+.popup {
+    &-container {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        z-index: 999;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 64px;
+        color: $color-gray-20;
+        font-size: 12px;
+        background: rgba($color-gray-10,.2);
+    }
+    &-header {
+        display: flex;
+        .popup-title {
+            width: 80%;
+            h3 {
+                font-size: 14px;
+                font-weight: 800;
+            }
+            .popup-description {
+                font-size: 10px;
+            }
+        }
+        .close-icon {
+            text-align: right;
+            width: 20%;
+        }
+    }
+}

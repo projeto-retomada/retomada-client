@@ -21,13 +21,14 @@ Vue.axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlenc
 Vue.axios.interceptors.response.use(function(response) {
     return response
 }, function(error) {
+    console.log(error);
     if (error.response && error.response.status === 401) {
-        VueFloatingAlert.warn({
+        Vue.VueFloatingAlert.warn({
             title: "Ops!",
             message: "Você não obteve autorização para fazer essa ação",
         })
     } else {
-        VueFloatingAlert.error({
+        Vue.VueFloatingAlert.error({
             title: "Ops!",
             message: "Algo de errado, tente novamente",
         })

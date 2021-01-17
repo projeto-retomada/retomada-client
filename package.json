@@ -1,25 +1,23 @@
 {
-  "name": "@coreui/coreui-free-vue-admin-template",
+  "name": "projeto-retomada",
   "version": "3.0.2",
-  "description": "Open Source Bootstrap Admin Template",
+  "description": "Plataforma de gerenciamento de risco e acompanhamento de infecções de COVID em escolas",
   "author": {
-    "name": "CoreUI",
-    "url": "https://coreui.io",
-    "github": "https://github.com/coreui",
-    "twitter": "https://twitter.com/core_ui"
+    "name": "Retomada",
+    "github": "https://github.com/projeto-retomada"
   },
   "contributors": [
     {
-      "name": "CoreUI Team",
-      "url": "https://github.com/orgs/coreui/people"
+      "name": "Retomada Team",
+      "url": "https://github.com/orgs/projeto-retomada/people"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:coreui/coreui-free-vue-admin-template.git"
+    "url": "https://github.com/projeto-retomada/retomada-client"
   },
-  "homepage": "http://coreui.io",
-  "copyright": "Copyright 2020 creativeLabs Łukasz Holeczek",
+  "homepage": "https://github.com/projeto-retomada",
+  "copyright": "Copyright 2021 Retomada Team",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -45,6 +43,7 @@
     "vue-axios": "^3.2.0",
     "vue-cookie": "^1.1.4",
     "vue-floating-alert": "^1.0.5",
+    "vue-resource": "^1.5.1",
     "vue-router": "~3.3.2",
     "vuex": "~3.4.0"
   },
