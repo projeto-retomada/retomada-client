@@ -6,7 +6,11 @@
           <CTab title="Locais da instituição" active>
             <div v-if="myPlacesLoaded">
               <div class="places-filter-div">
-                <CButton class="btn_novo m-2" v-if="role == 'ADMIN'">
+                <CButton
+                  class="btn_novo m-2"
+                  @click="addLocal"
+                  v-if="role == 'ADM'"
+                >
                   Criar novo
                 </CButton>
               </div>
@@ -61,6 +65,7 @@
         </CTabs>
       </CCardBody>
     </CCard>
+    <popup-add-local ref="popupAddLocal"></popup-add-local>
   </div>
 </template>
 
