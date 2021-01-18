@@ -1,5 +1,4 @@
-var nav = [
-  {
+var nav = [{
     _name: 'CSidebarNav',
     _children: [
       {
@@ -14,14 +13,15 @@ var nav = [
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Locais',
-        to: '/places',
-      },
-      {
-        _name: 'CSidebarNavItem',
         name: 'Questionários de Saúde',
         to: '/questionnaire',
       },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Locais',
+        to: '/places',
+      },
+      
     ]
   }
 ]
@@ -30,7 +30,11 @@ if (JSON.parse(localStorage.getItem('user')).role == 'ADMIN') {
     _name: 'CSidebarNavItem',
     name: 'Usuários',
     to: '/users',
-  },);
+  }, {
+        _name: 'CSidebarNavItem',
+        name: 'Turmas',
+        to: '/usergroups',
+    }, );
 }
 export default nav
 

@@ -4,32 +4,36 @@ import store from '../store'
 
 // Containers
 const TheContainer = () =>
-  import('@/containers/TheContainer')
+    import ('@/containers/TheContainer')
 
 // Views
 const Dashboard = () =>
-  import('@/views/Dashboard')
+    import ('@/views/Dashboard')
 
 const Profile = () =>
-  import('../views/base/profile/Profile.vue')
+    import ('../views/base/profile/Profile.vue')
 
 const Login = () =>
-  import('../views/pages/login/Login.vue')
+    import ('../views/pages/login/Login.vue')
 
 const Users = () =>
-  import('../views/base/users/Users.vue')
+    import ('../views/base/users/Users.vue')
+
+const Usergroups = () =>
+    import ('../views/base/usergroups/Usergroups.vue')
 
 const PlacesList = () =>
-  import('../views/base/places/PlacesList.vue')
+    import ('../views/base/places/PlacesList.vue')
 
 const PlacesView = () =>
-  import('../views/base/places/PlacesView.vue')
+    import ('../views/base/places/PlacesView.vue')
 
 // QUESTIONNAIRE COMPONENTS
 const QuestionnaireList = () =>
-  import('../views/base/questionnaire/QuestionnaireList.vue')
+    import ('../views/base/questionnaire/QuestionnaireList.vue')
+
 const QuestionnaireForm = () =>
-  import('../views/base/questionnaire/QuestionnaireForm.vue')
+    import ('../views/base/questionnaire/QuestionnaireForm.vue')
 
 // ACTIVITIES COMPONENTS
 const ActivitiesList = () =>
@@ -38,22 +42,21 @@ const ActivitiesList = () =>
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'hash', // https://router.vuejs.org/api/#mode
-  linkActiveClass: 'active',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: configRoutes()
+    mode: 'hash', // https://router.vuejs.org/api/#mode
+    linkActiveClass: 'active',
+    scrollBehavior: () => ({ y: 0 }),
+    routes: configRoutes()
 })
 
 router.beforeEach((to, from, next) => {
-  var token = localStorage.getItem('token');
-  token = token ? JSON.parse(localStorage.getItem('token')) : '';
-  if (to.name !== 'Login' && (!token || (!store.state.authenticated && token && token.expires < new Date()))) {
-    next({ name: 'Login' })
-  }
-  else {
-    store.commit("setAuthentication", true);
-    next()
-  }
+    var token = localStorage.getItem('token');
+    token = token ? JSON.parse(localStorage.getItem('token')) : '';
+    if (to.name !== 'Login' && (!token || (!store.state.authenticated && token && token.expires < new Date()))) {
+        next({ name: 'Login' })
+    } else {
+        store.commit("setAuthentication", true);
+        next()
+    }
 })
 
 export default router
@@ -79,6 +82,11 @@ function configRoutes() {
       path: '/users',
       name: 'Users',
       component: Users
+    },
+    {
+      path: '/usergroups',
+      name: 'Usergroups',
+      component: Usergroups
     },
     {
       path: '/questionnaire',

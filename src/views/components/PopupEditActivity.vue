@@ -1,8 +1,8 @@
 <template>
-  <CModal title="Criar Atividade" :show.sync="showModal">
+  <CModal title="Editar Atividade" :show.sync="showModal">
     <form>
       <div class="form-group">
-        <label for="activityName">Nome da atividade</label>
+        <label for="activityName"> Nome da atividade</label>
         <input required type="text" class="form-control" id="activityName" v-model="model.name" />
       </div>
       <div class="form-group">
@@ -19,7 +19,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="activityDateStart">Data de início</label>
-          <input type="date" class="form-control" id="activityDateStart"  v-model="model.startDate"/>
+          <input type="date" class="form-control" id="activityDateStart" v-model="model.startDate"/>
         </div>
         <div class="form-group col-md-6">
           <label for="activityTimeStart">Horário de início</label>
@@ -39,13 +39,13 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>Local</label>
-          <select class="form-control" v-model="model.place">
+          <select class="form-control" v-model="model.place_id">
             <option :value="place.id_place" v-for="place in places" :key="place.id">{{ place.name }}</option>
           </select>
         </div>
         <div class="form-group col-md-6">
           <label>Turma</label>
-          <select class="form-control" v-model="model.group">
+          <select class="form-control" v-model="model.usergroup_id">
             <option :value="usergroup.id_usergroup" v-for="usergroup in usergroups" :key="usergroup.id">{{ usergroup.name }}</option>
           </select>
         </div>
@@ -58,11 +58,9 @@
   </CModal>
 </template>
 <script>
+import moment from 'moment';
 export default {
-  name: "PopupAddActivity",
-  props: {
-      
-  },
+  name: "PopupEditActivity",
   created() {
     var vm = this;
     var user = JSON.parse(localStorage.getItem('user'));
@@ -84,35 +82,38 @@ export default {
     };
   },
   methods: {
-    openModal() {
+    openModal(activity) {
       this.showModal = true;
-      this.model = {
-        name: 'Nova Atividade',        
-      } 
+      this.model = activity;
+      this.model.startDate = moment(activity.start_date.toString()).format('YYYY-MM-DD');
+      this.model.endDate = moment(activity.end_date.toString()).format('YYYY-MM-DD');
+      this.model.startTime = activity.start_date.getHours()+':'+activity.start_date.getMinutes();
+      this.model.endTime = activity.end_date.getHours()+':'+activity.end_date.getMinutes();
+      console.log(this.model);
     },
     saveActivity() {
       var vm = this;
       console.log(this.model);
       var user = JSON.parse(localStorage.getItem('user'));            
-      this.axios.post('/activity/', {
+      this.axios.put('/activity/'+vm.model.id_activity, {
         name: vm.model.name,
         description: vm.model.description,
         start_date: new Date(vm.model.startDate + ' ' + vm.model.startTime),
         end_date: new Date(vm.model.endDate + ' ' + vm.model.endTime),
         organization_id: user.organization_id,
-        place_id: parseInt(vm.model.place),
-        usergroup_id: parseInt(vm.model.group),
+        place_id: parseInt(vm.model.place_id),
+        usergroup_id: parseInt(vm.model.usergroup_id),
       })
       .then(function () {
         vm.$floatingAlert.success({
           title: "Sucesso!",
-          message: "Os dados de sua atividade foram salvos corretamente!",
+          message: "Os dados de sua atividade foram alterados corretamente!",
         })
       })
       .finally(function () {
         vm.showModal = false;
       });
-    }
+    },
 
   },
 };
