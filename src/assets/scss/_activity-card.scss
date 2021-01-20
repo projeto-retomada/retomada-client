@@ -4,21 +4,30 @@
     font-size: 12px;
     line-height: 6px;
     width: 300px;
+
     .activity-title {
         font-size: 14px;
         margin-bottom: 24px;
         font-weight: 800;
         color: $color-gray-20;
         line-height: 20px;
-    } 
+    }
 }
+
 .activity-ongoing {
     .activity-card {
         border-top: 8px solid #007AFF;
     }
-}  
+}
+
 .activity-scheduled {
     .activity-card {
         border-top: 8px solid #9013FE;
     }
-} 
+}
+
+.activity-icons-card {
+    padding: 10px 10px 10px 0px;
+    float: right;
+    cursor: pointer;
+}

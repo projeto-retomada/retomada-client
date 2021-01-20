@@ -25,7 +25,7 @@ export default {
     openModal(local) {
       this.showModalDelete = true;
       this.model = local;
-      console.log(this.model);
+      // console.log(this.model);
     },
     deleteModal() {
       let vm = this;
