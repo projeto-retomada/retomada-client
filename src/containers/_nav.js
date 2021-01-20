@@ -27,14 +27,21 @@ var nav = [{
 ]
 if (JSON.parse(localStorage.getItem('user')).role == 'ADMIN') {
   nav[0]._children.push({
-    _name: 'CSidebarNavItem',
-    name: 'Usuários',
-    to: '/users',
-  }, {
-        _name: 'CSidebarNavItem',
-        name: 'Turmas',
-        to: '/usergroups',
-    }, );
+      _name: 'CSidebarNavItem',
+      name: 'Usuários',
+      to: '/users',
+    }, 
+    {
+      _name: 'CSidebarNavItem',
+      name: 'Turmas',
+      to: '/usergroups',
+    }, 
+    {
+      _name: 'CSidebarNavItem',
+      name: 'Dashboard',
+      to: '/dashboard',
+    },
+  );
 }
 export default nav
 

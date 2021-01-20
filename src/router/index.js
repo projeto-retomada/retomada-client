@@ -53,11 +53,16 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   var token = localStorage.getItem('token');
   token = token ? JSON.parse(localStorage.getItem('token')) : '';
+  var user = JSON.parse(localStorage.getItem('user'));
   if (to.name !== 'Login' && (!token || (!store.state.authenticated && token && token.expires < new Date()))) {
     next({ name: 'Login' })
   } else {
     store.commit("setAuthentication", true);
-    next()
+    if (user.role != 'ADMIN' && to.name !== 'Dashboard') {
+      next({ name: 'Profile' })
+    } else {
+      next()
+    }
   }
 })
 
