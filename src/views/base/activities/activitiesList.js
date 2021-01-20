@@ -60,7 +60,8 @@ export default {
             onGoing: [],
             finished: [],
             scheduled: [],
-            modalAddActivity: false
+            modalAddActivity: false,
+            user: JSON.parse(localStorage.getItem('user'))
         };
     },
     methods: {

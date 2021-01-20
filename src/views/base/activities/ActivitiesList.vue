@@ -4,7 +4,7 @@
             <CCardBody>
                 <CTabs class="places-tabs">
                     <CTab title="Atividades da Instituição" active>
-                        <div class="activities-filters-container">
+                        <div class="activities-filters-container" v-if="user.role != 'STUDENT'">
                             <CButton class="btn_novo m-2" @click="addActivity">Criar nova</CButton>
                         </div>
                         <div class="activities-content-container" v-if="!activitiesLoading">

@@ -8,7 +8,7 @@ const TheContainer = () =>
 
 // Views
 const Dashboard = () =>
-  import('@/views/Dashboard')
+  import('../views/base/dashboard/Dashboard.vue')
 
 const Profile = () =>
   import('../views/base/profile/Profile.vue')

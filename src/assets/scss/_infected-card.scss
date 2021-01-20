@@ -1,0 +1,21 @@
+.infected-card {
+    width: 300px;
+    &__title {
+        font-size: 14px;
+        color: $color-gray-60;
+    }
+    &__statistic {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .infected {
+        font-weight: bold;
+        font-size: 64px;
+    }
+    .total {
+        font-weight: bold;
+        color: $color-gray-60;
+        font-size: 45px;
+    }
+}
