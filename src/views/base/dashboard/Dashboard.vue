@@ -29,7 +29,14 @@
                             <div class="u-display-flex u-flex-wrap u-justify-content-between">
                                 <infecteds-by-groups></infecteds-by-groups>
                                 <last-activities-infecteds></last-activities-infecteds>
-                                <last-infecteds></last-infecteds>
+                                <last-infecteds :usersList="infectedStudentsList"></last-infecteds>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="u-semibold u-margin-top-2">Análise dos casos de professores</p>
+                            <div class="u-display-flex u-flex-wrap">
+                                <last-activities-infecteds class="u-margin-right-3"></last-activities-infecteds>
+                                <last-infecteds :usersList="infectedTeachersList"></last-infecteds>
                             </div>
                         </div>
                   </CTab>

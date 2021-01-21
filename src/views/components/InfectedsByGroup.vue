@@ -4,7 +4,7 @@
             <p class="u-semibold u-margin-top-2 p-color-gray-60">Distribuição de alunos infectados por turma</p>
             <CChartPie
                 :datasets="defaultDatasets"
-                :labels="['VueJs', 'EmberJs', 'ReactJs', 'AngularJs']"
+                :labels="labels"
                 class="u-margin-bottom-2"
             />
         </CCardBody>
@@ -15,20 +15,36 @@ import { CChartPie } from '@coreui/vue-chartjs'
 export default {
     name: 'InfectedsByGroup',
     components: { CChartPie },
+    created() {
+      var vm = this;
+      this.axios.get('dash/cases-by-usergroup', {})
+      .then(function (result) {
+        result.data.forEach(function (groupData) {
+          vm.labels.push(groupData.name);
+          vm.graphData.push(groupData.casos);
+        });
+      });
+    },
+    data () {
+      return {
+        labels: [],
+        graphData: []
+      }
+    },
     computed: {
-    defaultDatasets () {
-      return [
-        {
-          backgroundColor: [
-            '#41B883',
-            '#E46651',
-            '#00D8FF',
-            '#DD1B16'
-          ],
-          data: [40, 20, 80, 10]
+      defaultDatasets () {
+        var vm = this;
+        var colors = [];
+        for (var i = 0; i < vm.labels.length; i++) {
+          colors.push('#' + Math.floor(Math.random()*16777215).toString(16));
         }
-      ]
-    }
+        return [
+          {
+            backgroundColor: colors,
+            data: vm.graphData
+          }
+        ]
+      }
   }
 }
 </script>

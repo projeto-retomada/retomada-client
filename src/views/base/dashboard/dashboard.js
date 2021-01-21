@@ -22,7 +22,9 @@ export default {
         totalAdmins: 0,
         infectedAdmins: 0,
         labels: [],
-        dataset: []
+        dataset: [],
+        infectedStudentsList: [],
+        infectedTeachersList: []
       }
     },
     created() {
@@ -48,6 +50,15 @@ export default {
         serialCases.forEach(dateCases => {
           vm.dataset.push(dateCases.count);
           vm.labels.push(dateCases.creation.split('-')[2] + '/' + dateCases.creation.split('-')[1] + '/' + dateCases.creation.split('-')[0]);
+        });
+      });
+      this.axios.get('dash/last-students-cases', {})
+      .then(function (result) {
+        vm.infectedStudentsList = result.data.slice(0,4);
+        vm.infectedStudentsList.forEach(function(user) {
+            if (!user.picture) {
+              user.picture = 'img/avatars/user_default.png';
+            }
         });
       });
     },
