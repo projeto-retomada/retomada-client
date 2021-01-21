@@ -28,6 +28,9 @@ const PlacesList = () =>
 const PlacesView = () =>
   import('../views/base/places/PlacesView.vue')
 
+const ActivitiesView = () =>
+  import('../views/base/activities/ActivitiesView.vue')
+
 // QUESTIONNAIRE COMPONENTS
 const QuestionnaireList = () =>
   import('../views/base/questionnaire/QuestionnaireList.vue')
@@ -58,7 +61,7 @@ router.beforeEach((to, from, next) => {
     next({ name: 'Login' })
   } else {
     store.commit("setAuthentication", true);
-    if (user.role != 'ADMIN' && to.name !== 'Dashboard') {
+    if (user.role != 'ADM' && to.name !== 'Dashboard') {
       next({ name: 'Profile' })
     } else {
       next()
@@ -128,6 +131,14 @@ function configRoutes() {
       path: '/activities/',
       name: 'Activities',
       component: ActivitiesList
+    },
+    {
+      path: '/activities/view/:activitie',
+      name: 'ActivitiesView',
+      component: ActivitiesView,
+      props: (route) => ({
+        ...route.params
+      })
     },
     ]
   },
