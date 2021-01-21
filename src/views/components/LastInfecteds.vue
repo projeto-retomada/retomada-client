@@ -6,7 +6,7 @@
                 <a href><img class="profile-pic u-margin-right-1" :src="user.picture">{{ user.name }}</a>
             </p>
             <p v-if="!usersList.length" class="p-color-gray-50">
-                <i class="fas fa-grin-hearts p-color-green-45"></i> Não foram resgistradas pessoas infectadas nessa categoria
+                <i class="fas fa-grin-hearts p-color-green-45"></i> Não foram registradas pessoas infectadas nessa categoria
             </p>
         </CCardBody>
     </CCard>

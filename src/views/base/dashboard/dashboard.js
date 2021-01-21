@@ -24,7 +24,9 @@ export default {
         labels: [],
         dataset: [],
         infectedStudentsList: [],
-        infectedTeachersList: []
+        infectedTeachersList: [],
+        activitiesTeachers: [],
+        activitiesStudents: []
       }
     },
     created() {
@@ -60,6 +62,23 @@ export default {
               user.picture = 'img/avatars/user_default.png';
             }
         });
+      });
+      this.axios.get('dash/last-teachers-cases', {})
+      .then(function (result) {
+        vm.infectedTeachersList = result.data.slice(0,4);
+        vm.infectedTeachersList.forEach(function(user) {
+            if (!user.picture) {
+              user.picture = 'img/avatars/user_default.png';
+            }
+        });
+      });
+      this.axios.get('dash/activities-student', {})
+      .then(function (result) {
+        vm.activitiesStudents = result.data.slice(0,4);
+      });
+      this.axios.get('dash/activities-teacher', {})
+      .then(function (result) {
+        vm.infectedTeachersList = result.data.slice(0,4);
       });
     },
     methods: {

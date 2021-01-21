@@ -58,7 +58,7 @@ export default {
                 })
                 vm.alreadyAnswered = true;
                 vm.loadUsers()
-            });
+            }).catch(err => console.log(err));
         },
         loadUsers() {
             let vm = this;
